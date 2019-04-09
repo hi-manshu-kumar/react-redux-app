@@ -1,4 +1,5 @@
 import React from 'react';
+import DateTimePicker from 'react-datetime-picker';
 
 const Todos = ({todos, deleteTodo, toggleChecked}) => {
 
@@ -18,8 +19,15 @@ const Todos = ({todos, deleteTodo, toggleChecked}) => {
                         : 
                         <span className="mx-4">{todo.task}</span>
                     }
-                    &nbsp; 
                     <i className="far fa-trash-alt text-danger float-right deleteIcon" onClick={() => deleteTodo(todo.id)}></i>
+                    <DateTimePicker 
+                    className=" float-right mx-2 "
+                        // onChange={this.onChange}
+                        disabled
+                        value={todo.date}
+                        />
+                    {/* {todo.date} */}
+                    &nbsp; 
                 </span>
             </div>
         )

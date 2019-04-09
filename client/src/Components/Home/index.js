@@ -7,8 +7,8 @@ class Home extends Component {
         super();
         this.state= {
             todos: [
-                {id : 1, task : 'buy eggs', checked: false},
-                {id : 2, task : 'go gym', checked:true}
+                {id : 1, task : 'buy eggs', checked: false, date: new Date('1/1/2019')},
+                {id : 2, task : 'go gym', checked:true, date: new Date('1/1/2019')}
             ]
         }
     }
@@ -33,9 +33,8 @@ class Home extends Component {
         let {todos} =  this.state;
         todo.id = todos.length+1;
         todo.checked = false;
-        console.log(todo);
+
         todos = [...todos ,todo];
-        console.log(todos);
 
         this.setState({todos})
     }
